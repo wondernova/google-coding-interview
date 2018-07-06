@@ -15,7 +15,11 @@ sudo pip3 install pytest
 git clone git@github.com:AndersonJo/google-coding-interview.git
 ```
 
-# 구성
+# 구성품
+
+* 0001 ~ 0100 : leetcode에서 출제한 100가지 가장 유명한 코딩 테스트 문제
+
+# 연습 방법
 
 pytest를 통해서 당신이 쓴 알고리즘이 맞는지 틀리는지 찾을수 있소. 
 
