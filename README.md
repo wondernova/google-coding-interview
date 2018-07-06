@@ -1,7 +1,9 @@
 # Google Coding Interview
 
 구글 입사를 위해서!! 밤낮없이 연습하는 그대!!
+
 여기 문제 그리고 정답이 있소!
+
 햏력을 위해 정진하시오
 
 # 설치
@@ -16,6 +18,7 @@ git clone git@github.com:AndersonJo/google-coding-interview.git
 # 구성
 
 pytest를 통해서 당신이 쓴 알고리즘이 맞는지 틀리는지 찾을수 있소. 
+
 예를 들어서 첫번째 test_0001_two_sum.py 같은 경우 다음과 같이 알고리즘을 테스트 할 수 있소. 
 
 ```
