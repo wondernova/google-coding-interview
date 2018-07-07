@@ -15,6 +15,8 @@ sudo pip3 install pytest
 git clone git@github.com:AndersonJo/google-coding-interview.git
 ```
 
+파이썬 버젼은 Python3 를 사용하오
+
 ## 구성품
 
 * 0001 ~ 0100 : leetcode에서 출제한 100가지 가장 유명한 코딩 테스트 문제
