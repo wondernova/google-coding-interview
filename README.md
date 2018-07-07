@@ -57,6 +57,13 @@ Sort 알고리즘도 가물가물하여 정신 차리고자 만들어 봤소.
 그리고 고생한 만큼.. 뭔가 결과가 있었으면 좋겠소. 햏햏
 
 
+## Code Contribution
+
+누구든지 Pull Request 를 보낼수 있소~ 
+
+추가된 문제 또는 잘못된 알고리즘은 PR을 보내시오~ 
+
+
 ## 문제 가져온곳
 
 * [https://leetcode.com/](https://leetcode.com/)
