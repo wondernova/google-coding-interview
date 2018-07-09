@@ -25,6 +25,11 @@ def test_longest_substring_without_repeating_characters():
 
 
 def my_answer(s):
+    """
+    Time Complexity : for loop -> O(n)
+    Space Complexity : duplicates -> O(n)
+    """
+
     string = s
     start = max_length = 0
     duplicates = dict()

@@ -19,6 +19,8 @@ def test_two_sum():
 
 def answer(nums: list, target: int):
     """
+    Time complexity: O(n) -> for loop
+    Space complexity: O(n) -> complement
 
     """
     complement = dict()
