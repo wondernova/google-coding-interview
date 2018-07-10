@@ -28,13 +28,14 @@ pytest를 통해서 당신이 쓴 알고리즘이 맞는지 틀리는지 찾을�
 예를 들어서 첫번째 test_0001_two_sum.py 같은 경우 다음과 같이 알고리즘을 테스트 할 수 있소. 
 
 ```
->> pytest -s test_0001_two_sum.py
+>> pytest -s "01 Basic/test_01_anagram.py"
 ================================================= test session starts ==================================================
 platform linux -- Python 3.6.4, pytest-3.6.3, py-1.5.2, pluggy-0.6.0
 rootdir: /home/anderson/@python/google-coding-interview, inifile:
-collected 1 item                                                                                                       
+collected 1 item
 
-test_0001_two_sum.py .
+01 Basic/test_01_anagram.py .
+
 
 =============================================== 1 passed in 0.02 seconds ===============================================
 ```
