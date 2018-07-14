@@ -1,4 +1,8 @@
 def test_anagram():
+    """
+    글자들을 재배열해서 다른 글자가 완성이 될 수 있으면 anagram이다.
+    anagram이 되는지 안되는지 체크하는 알고리즘을 만들어라
+    """
     assert anagram('python', 'typhon')
     assert anagram('heart', 'earth')
     assert anagram('silent', 'listen')
@@ -8,7 +12,7 @@ def test_anagram():
     assert anagram('Conversation', 'Voices rant on')
 
 
-def anagram(s1, s2):
+def anagram_backup(s1, s2):
     s1 = s1.lower()
     s2 = s2.lower()
 
@@ -26,3 +30,19 @@ def anagram(s1, s2):
         else:
             correct = False
     return correct
+
+
+def anagram(s1, s2):
+    buf = {}
+
+    for s in s1:
+        buf.setdefault(s, 0)
+        buf[s] += 1
+
+    for s in s2:
+        buf.setdefault(s, 0)
+        buf[s] -= 1
+
+    if ' ' in buf:
+        del buf[' ']
+    return not bool(sum(buf.values()))

@@ -1,6 +1,8 @@
 def test_anagram():
     """
     https://www.hackerrank.com/challenges/ctci-making-anagrams/problem
+
+    Anagram을 만들기 위해서 몇개의 글자를 지워야 하는지 알아내는 함수를 만드시오
     """
     arr1 = list('cde')
     arr2 = list('abc')

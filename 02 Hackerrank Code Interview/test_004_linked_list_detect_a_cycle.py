@@ -39,6 +39,9 @@ def create_disconneted_node():
 def test_detect_a_cycle():
     """
     https://www.hackerrank.com/challenges/ctci-linked-list-cycle/problem
+
+    Linked list가 cycle을 갖고 있는지 없는지 알아내는 함수를 만드시오.
+    이때 각각의 node에 확인을 했다는 체크를 할수 없습니다.
     """
     head = create_random_node()
     assert True == my_answer(head)

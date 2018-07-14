@@ -37,10 +37,18 @@ def create_valid_binary_search_tree():
 def test_detect_a_cycle():
     """
     https://www.hackerrank.com/challenges/ctci-linked-list-cycle/problem
+
+    Binary Search tree는 root node를 기준으로 왼쪽으로는 root node보다 작은 값이 그리고 오른쪽으로는 더 큰 값이 와야 합니다.
+    하지만 이때 sub tree에서 예를 들어서 부모 노드의 값보다 더 큰 값이 오른쪽에 있거나.. 하여튼 그러면 안됨.
+    Binary search tree를 자세하게 알려면 링크 열고 확인.
+
+    문제는 binary search tree인지 아닌지 알아내는 함수 짤것
+
+    조건으로 모든 값은 unique하다
     """
     root = create_valid_binary_search_tree()
     answer = my_answer(root)
-    assert True == answer
+    assert answer
 
 
 def my_answer(root):
