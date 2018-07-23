@@ -1,6 +1,3 @@
-from unittest import TestCase
-
-
 def sort(data):
     new_one = data[:]
     new_one.sort()
@@ -38,6 +35,15 @@ def test_bubble_sort():
 
 
 def bubble_sort(data):
+    n = len(data)
+    for i in range(n - 1, 0, -1):
+        for j in range(i):
+            if data[j] > data[j + 1]:
+                data[j], data[j + 1] = data[j + 1], data[j]
+    return data
+
+
+def bubble_sort2(data):
     count = len(data) - 1
     while count >= 0:
         for j in range(count):

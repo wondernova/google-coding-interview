@@ -1,4 +1,15 @@
 def test_use_two_stacks_to_implement_deque():
+    """
+    https://www.hackerrank.com/challenges/ctci-queue-using-two-stacks/problem
+
+    2개의 stacks을 사용해서 queue를 만들어라.
+
+    참고. Stack 과 Queue의 차이
+    Stack is a LIFO (last in first out) data structure.
+    Queue is a FIFO (first in first out) data structure.
+
+    """
+
     # First Test
     queue = MyQueue()
     queue.put(42)  # [42]
@@ -21,11 +32,7 @@ def test_use_two_stacks_to_implement_deque():
 
 class MyQueue(object):
     """
-    Instack : LIFO (last in first out)
-    Outstack : FIFO (first in first out)
 
-    이렇게 두개의 stacks을 만들되.. 서로 들오고 나가는 순서가 다른 stacks으로 구현을 하는게 포인트이다.
-    또한 매번 instack -> outstack으로 전환하는 과정의 연산을 줄이기 위해서 필요할때만 하도록 만드는것이 포인트이다.
     """
 
     def __init__(self):

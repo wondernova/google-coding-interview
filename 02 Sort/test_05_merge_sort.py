@@ -1,4 +1,4 @@
-def sort( data):
+def sort(data):
     new_one = data[:]
     new_one.sort()
     return new_one
