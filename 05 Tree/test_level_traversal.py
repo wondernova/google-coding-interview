@@ -16,6 +16,9 @@ def create_tree(arr):
     Accessing Parent Node
         parent_index = (i -1)//2
     """
+    if not arr:
+        return None
+
     nodes = [Node(arr[0])]
 
     i = 1
@@ -43,6 +46,12 @@ def test_level_traversal():
 
     node = create_tree([10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0])
     assert [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0] == level_traversal(node)
+
+    node = create_tree([1, 2, 3, None, None, None, 7])
+    assert [1, 2, 3, 7] == level_traversal(node)
+
+    node = create_tree([])
+    assert [] == level_traversal(node)
 
 
 from collections import deque
