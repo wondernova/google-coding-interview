@@ -61,6 +61,10 @@ def find_sort_sum(arr, k):
 
 
 def find_hash_sum(arr, k):
+    """
+    Time Complexity: O(n)
+    Space Complexity: O(n)
+    """
     hash = dict()
 
     for i in range(len(arr)):
