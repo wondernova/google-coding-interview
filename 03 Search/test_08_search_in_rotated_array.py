@@ -8,6 +8,8 @@ def test_searching_in_rotated_array():
 
     A = [15, 16, 19, 20, 25, 1, 3, 4, 5, 7, 10, 14] 에서 5를 찾으세요
     결과 8 (index)
+
+    한번에 해결할수 있는 코드는 09번 bitonic search를 사용하면 됨
     """
 
     # Test find_pivot
