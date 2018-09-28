@@ -49,6 +49,8 @@ def factorial_dp(n):
     """
     한번 계산할때는 사실 도움은 안되나..
     만약 이전에 계산한 값이 있다면, DP를 통해 이전에 계산한 값을 저장한 테이블에서 가져와서 연산량을 줄일수 있습니다.
+
+    Time Complexity: O(max(m, n))
     """
     if not hasattr(factorial_dp, 'memoize'):
         factorial_dp.memoize = {}
