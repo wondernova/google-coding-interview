@@ -11,7 +11,7 @@ NPS measures customer experience and it can be used as KPI (Ker Performance Indi
 
 
 
-![NPS](/home/anderson/@python/google-coding-interview/images/nps.png)
+![NPS](images/nps.png)
 
 * Measures NPS by 11 points (0~10 points) and calculate NPS by subtracting `detractors` from `promoters`
 * `How likely isit that you would recommend the product or brand to a friend or colleague` is the question. 
