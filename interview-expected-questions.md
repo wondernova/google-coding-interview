@@ -29,14 +29,6 @@
 
 4. Pull the plug
 
-# Leadership Test
-
-### Talk About Why You Failed and what you learned from it
-
-
-
-
-
 
 
 
