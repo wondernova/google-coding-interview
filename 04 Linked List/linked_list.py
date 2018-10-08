@@ -1,3 +1,6 @@
+from typing import List, Tuple
+
+
 class Node():
     def __init__(self, value):
         self.value = value
@@ -22,3 +25,18 @@ def create_linked_list(arr, cycle_idx=None) -> Node:
         node.next = cycle_node
 
     return root.next
+
+
+def two_linked_list(arr1, arr2, arr3) -> Tuple[Node, Node]:
+    root1 = node1 = create_linked_list(arr1)
+    while node1.next:
+        node1 = node1.next
+
+    root2 = node2 = create_linked_list(arr2)
+    while node2.next:
+        node2 = node2.next
+
+    join_node = create_linked_list(arr3)
+    node1.next = join_node
+    node2.next = join_node
+    return root1, root2
