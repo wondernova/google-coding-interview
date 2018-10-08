@@ -40,3 +40,11 @@ def two_linked_list(arr1, arr2, arr3) -> Tuple[Node, Node]:
     node1.next = join_node
     node2.next = join_node
     return root1, root2
+
+
+def to_list(node: Node) -> list:
+    stack = list()
+    while node:
+        stack.append(node.value)
+        node = node.next
+    return stack
