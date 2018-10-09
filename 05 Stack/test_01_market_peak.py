@@ -45,6 +45,12 @@ def span_brute_force(arr):
 
 
 def span_with_stack(arr):
+    """
+    Time Complexity: O(n)
+    Space Complexity: O(n)
+    내부 while문 때문에 O(n^2) 인것 같지만 필요없는 정보를 pop으로 삭제시킴으로서
+    n번만 돌아감. 따라서 O(n) 이 됨.
+    """
     stack = list()
     span = list()
 
