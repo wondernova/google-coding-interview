@@ -18,20 +18,19 @@ def test_level_traversal():
     assert [] == level_traversal(node)
 
 
-from collections import deque
+from queue import Queue
 
 
 def level_traversal(root):
-    dq = deque()
-    dq.appendleft(root)
+    queue = Queue()
+    queue.put(root)
     response = []
-    i = 0
-    while dq:
-        node = dq.pop()
 
+    while not queue.empty():
+        node = queue.get()
         if node is not None:
             response.append(node.value)
-            dq.appendleft(node.left)
-            dq.appendleft(node.right)
+            queue.put(node.left)
+            queue.put(node.right)
 
     return response

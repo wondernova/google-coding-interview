@@ -10,6 +10,12 @@ def test_squared_power():
 
 
 def power(x, n):
+    """
+    x^n = (x^2)^(n/2) 를 이용함
+    짝수 : (x^2)^(n/2)
+    홀수 : x * (x^2)^(n-1/2)
+
+    """
     if n <= 0:
         return 1
 

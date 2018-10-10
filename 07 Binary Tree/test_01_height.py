@@ -41,7 +41,7 @@ def test_tree_height():
     assert 0 == non_recursive_size(node)
 
 
-from collections import deque
+from queue import Queue
 
 
 def recursive_size(root):
@@ -56,20 +56,20 @@ def non_recursive_size(root):
     if not root:
         return 0
 
-    dq = deque()
-    dq.append(root)
-    dq.append(None)
+    queue = Queue()
+    queue.put(root)
+    queue.put(None)
 
     count = 0
-    while dq:
-        node = dq.popleft()
+    while not queue.empty():
+        node = queue.get()
         if node is None:
             count += 1
-            if len(dq):
-                dq.append(None)
+            if queue.qsize():
+                queue.put(None)
         else:
             if node.left:
-                dq.append(node.left)
+                queue.put(node.left)
             if node.right:
-                dq.append(node.right)
+                queue.put(node.right)
     return count
