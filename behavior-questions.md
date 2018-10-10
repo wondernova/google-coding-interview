@@ -56,3 +56,15 @@ NPS measures customer experience and it can be used as KPI (Ker Performance Indi
 * Theoretically the range of the score can be from -100 to +100. 
 * At least [250 customers](https://medium.com/jandi-messenger-stories/nps-2-%EC%B5%9C%EC%86%8C%ED%95%9C%EC%9D%98-%EC%9E%90%EC%9B%90%EC%9C%BC%EB%A1%9C-nps%EB%A5%BC-%EC%8B%A4%ED%96%89%ED%95%B4%EB%B3%B4%EC%9E%90-d0c8e4e905b1) should respond
 
+**AARRR**
+
+![AARRR](images/aarrr-mobile.png)
+
+1. Acquisition: How do users find you?
+2. Activation: Do users have a great first experience?
+3. Retention: Do users come back?
+4. Revenue: How do you make money?
+5. Referral: Do users tell others?
+
+
+
