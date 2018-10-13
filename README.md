@@ -41,11 +41,6 @@ collected 1 item
 연습할꺼면..잠시 지워두고.. 한번 풀어보시오
 
 
-## Machine Learning Questions
-
-1. [Eigenvalue and Eigenvector](Machine Learning Questions/Eigenvalue and Eigenvector.ipynb)
-
-
 
 
 ## 만들게 된 이유
