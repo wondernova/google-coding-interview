@@ -41,26 +41,25 @@ def lcs_recursion(s1: str, s2: str):
 
 
 def lcs_dp(s1: str, s2: str):
-    m, n = len(s1), len(s2)
-    table = [[0] * (n + 1) for _ in range(m + 1)]
+    n, m = len(s1), len(s2)
+    dp = [[0] * (m + 1) for _ in range(n + 1)]
 
-    for i, c1 in enumerate(s1):
-        for j, c2 in enumerate(s2):
-            if c1 == c2:
-                table[i + 1][j + 1] = table[i][j] + 1
+    for i in range(n):
+        for j in range(m):
+            if s1[i] == s2[j]:
+                dp[i + 1][j + 1] = dp[i][j] + 1
             else:
-                table[i + 1][j + 1] = max(table[i + 1][j], table[i][j + 1])
+                dp[i + 1][j + 1] = max(dp[i + 1][j], dp[i][j + 1])
 
-    i, j = len(s1), len(s2)
-    result = ''
-    while i != 0 and j != 0:
-        if table[i][j] == table[i - 1][j]:
+    lcs = ''
+    i, j = n, m
+    while i > 0 and j > 0:
+        if dp[i][j] == dp[i - 1][j]:
             i -= 1
-        elif table[i][j] == table[i][j - 1]:
+        elif dp[i][j] == dp[i][j - 1]:
             j -= 1
         else:
-            assert s1[i - 1] == s2[j - 1]
-            result = s1[i - 1] + result
+            lcs = s1[i - 1] + lcs
             i -= 1
             j -= 1
-    return result
+    return lcs
