@@ -1,4 +1,4 @@
-from tools import create_tree
+from tools import create_tree, Node
 
 
 def test_least_common_ancestor():
@@ -54,25 +54,20 @@ def test_least_common_ancestor():
     assert 1 == lca(node, 7, 2)
 
     node = create_tree([])
-    assert [] == lca(node, 3, 0)
+    assert lca(node, 3, 0) is None
 
 
-from collections import deque
+def lca(root: Node, a: int, b: int):
+    if root is None:
+        return None
 
+    if root.value == a or root.value == b:
+        return root
 
-def lca(root, a, b):
-    if not root:
-        return []
+    left = lca(root.left, a, b)
+    right = lca(root.right, a, b)
 
-    stack = []
-    dq = deque()
-    dq.appendleft(root)
+    if left and right:
+        return root.value
 
-    while dq:
-        node = dq.pop()
-        if node is not None:
-            stack.append(node.value)
-            dq.appendleft(node.right)
-            dq.appendleft(node.left)
-
-    return stack[::-1]
+    return left or right
