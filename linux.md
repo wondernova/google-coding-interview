@@ -1,5 +1,30 @@
 # Linux Interview Questions
 
+#### How to check current run level of a linux server ?
+
+```
+who -r
+```
+
+또는
+
+```
+runlevel
+```
+
+###  How to check the default gatway in linux ?
+
+```
+route -n
+```
+
+또는
+
+```
+netstat -nr
+```
+
+
 #### 30일 안에 access된 모든 파일을 찾아라
 
 ```
@@ -50,7 +75,7 @@ UDP connection
 $ nc -v -u google.com 53
 ```
 
-### SSH Connection Status
+
 
 
 

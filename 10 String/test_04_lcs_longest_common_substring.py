@@ -10,35 +10,34 @@ def test_longest_substring_without_repeating_characters():
     """
     question = 'abcabcbb'
     expected = 3  # 'abc'
-    answer = my_answer(question)
-    assert expected == answer
+    assert expected == my_answer(question)
+
+    question = 'abcabcdabcdef'
+    expected = 6  # 'abcdef'
+    assert expected == my_answer(question)
+
+    question = 'abcdefgabcdabc'
+    expected = 7  # 'abcdefg'
+    assert expected == my_answer(question)
 
     question = 'bbbbb'
     expected = 1  # 'b'
-    answer = my_answer(question)
-    assert expected == answer
+    assert expected == my_answer(question)
 
     question = 'pwwkew'
     expected = 3  # 'wke'
-    answer = my_answer(question)
-    assert expected == answer
+    assert expected == my_answer(question)
 
 
 def my_answer(s):
-    """
-    Time Complexity : for loop -> O(n)
-    Space Complexity : duplicates -> O(n)
-    """
-
-    string = s
     start = max_length = 0
     duplicates = dict()
 
-    for i, s in enumerate(string):
-        if string[i] in duplicates and start <= duplicates[s]:
-            start = duplicates[s] + 1
+    for i, c in enumerate(s):
+        if c in duplicates and start <= duplicates[c]:
+            start = duplicates[c] + 1
         else:
-            max_length = max(max_length, i - start + 1)
+            max_length = max(i - start + 1, max_length)
 
-        duplicates[s] = i
+        duplicates[c] = i
     return max_length
