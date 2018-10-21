@@ -1,15 +1,6 @@
 from node_tools import create_tree
 
 
-def preorder(node, response=[]):
-    if node is None:
-        return
-    response.append(node.value)
-    preorder(node.child, response)
-    preorder(node.next, response)
-    return response
-
-
 def test_preorder():
     root = create_tree([1, 2, 3, None, 4, None, 44, None, 55, None, None, 5, None, 6, 7, 8, 9,
                         None, 10, None, 11, None, 12, None, None, None, None, 20])
@@ -33,3 +24,12 @@ def test_preorder():
 
     root = create_tree([10, 20, None, 30, None, 40, None, 50, 2, None, None, 60])
     assert [10, 20, 30, 40, 50, 2, 60] == preorder(root, [])
+
+
+def preorder(node, response=[]):
+    if node is None:
+        return
+    response.append(node.value)
+    preorder(node.child, response)
+    preorder(node.next, response)
+    return response
