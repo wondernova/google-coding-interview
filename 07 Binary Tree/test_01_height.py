@@ -1,4 +1,4 @@
-from tools import create_tree
+from tools import create_tree, Node
 
 
 def test_tree_height():
@@ -44,20 +44,18 @@ def test_tree_height():
 from queue import Queue
 
 
-def recursive_size(root):
-    if root is None:
+def recursive_size(node: Node):
+    if node is None:
         return 0
-
-    return max(recursive_size(root.left),
-               recursive_size(root.right)) + 1
+    return max(recursive_size(node.left), recursive_size(node.right)) + 1
 
 
-def non_recursive_size(root):
-    if not root:
+def non_recursive_size(node: Node):
+    if node is None:
         return 0
 
     queue = Queue()
-    queue.put(root)
+    queue.put(node)
     queue.put(None)
 
     count = 0
@@ -73,3 +71,33 @@ def non_recursive_size(root):
             if node.right:
                 queue.put(node.right)
     return count
+
+# def recursive_size(root):
+#     if root is None:
+#         return 0
+#
+#     return max(recursive_size(root.left),
+#                recursive_size(root.right)) + 1
+
+
+# def non_recursive_size(root):
+#     if not root:
+#         return 0
+#
+#     queue = Queue()
+#     queue.put(root)
+#     queue.put(None)
+#
+#     count = 0
+#     while not queue.empty():
+#         node = queue.get()
+#         if node is None:
+#             count += 1
+#             if queue.qsize():
+#                 queue.put(None)
+#         else:
+#             if node.left:
+#                 queue.put(node.left)
+#             if node.right:
+#                 queue.put(node.right)
+#     return count
