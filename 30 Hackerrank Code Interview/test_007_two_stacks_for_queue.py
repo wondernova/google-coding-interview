@@ -31,10 +31,6 @@ def test_use_two_stacks_to_implement_deque():
 
 
 class MyQueue(object):
-    """
-
-    """
-
     def __init__(self):
         self.instack = list()
         self.outstack = list()
