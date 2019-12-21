@@ -30,5 +30,3 @@ def permute_no_arguments(arr):
             result.append(perm[:i] + word + perm[i:])
 
     return result
-
-def permute(arr, l, r):
