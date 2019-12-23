@@ -2,31 +2,29 @@ import itertools
 
 
 def test_permutation():
-    arr = 'ABC'
+    arr = list('ABC')
 
     # using itertools
     answer = [('A', 'B'), ('A', 'C'), ('B', 'A'), ('B', 'C'), ('C', 'A'), ('C', 'B')]
     assert answer == list(itertools.permutations(arr, r=2))
 
-    # No Argument Method
-    response = permute_no_arguments(arr)
-    print()
-    print(list(itertools.permutations(arr)))
-    print(response)
+    # Test01 - DFS Permutation
+    answer = list(itertools.permutations(arr))
+    assert set(answer) == set(permutation(arr))
 
 
-def permute_no_arguments(arr):
-    """
-    permutation = n!/(n-r)!
-    """
-    if len(arr) <= 1:
-        return arr
-    perms = permute_no_arguments(arr[1:])
-    word = arr[0]
+def permutation(arr):
+    def dfs(arr, start, res):
+        n = len(arr)
+        if start >= n - 1:
+            res.append(tuple(arr))
+            return res
 
-    result = []
-    for perm in perms:
-        for i in range(len(perm) + 1):
-            result.append(perm[:i] + word + perm[i:])
+        for i in range(start, n):
+            arr[start], arr[i] = arr[i], arr[start]
+            dfs(arr, start + 1, res)
+            arr[start], arr[i] = arr[i], arr[start]
 
-    return result
+    res = []
+    dfs(arr, 0, res)
+    return res
