@@ -19,6 +19,7 @@ def test_staircase():
     assert 8 == num_ways(4)
     assert 16 == num_ways(5)
     assert 32 == num_ways(6)
+    assert 63 == num_ways(7)
 
     # Dynamic Programming Method
     assert 1 == num_ways_dp(0)
@@ -28,6 +29,7 @@ def test_staircase():
     assert 8 == num_ways_dp(4)
     assert 16 == num_ways_dp(5)
     assert 32 == num_ways_dp(6)
+    assert 63 == num_ways_dp(7)
     assert num_ways(610) == num_ways_dp(610)
 
 
@@ -49,14 +51,13 @@ def num_ways(n):
 
 
 def num_ways_dp(n):
-    dp = [0] * max(n + 1, 2)
-    dp[0] = dp[1] = 1
+    dp = [1] * max(n + 1, 2)
 
     for i in range(2, n + 1):
-        j, sum = 1, 0
+        j, sum = max(i - 6, 0), 0
 
-        while j <= 6 and j <= i:
-            sum += dp[i - j]
+        while j < i:
+            sum += dp[j]
             j += 1
         dp[i] = sum
     return dp[-1]
