@@ -28,6 +28,10 @@ def test_longest_substring_without_repeating_characters():
     expected = 3  # 'wke'
     assert expected == my_answer(question)
 
+    question = 'dvdf'
+    expected = 3  # 'vdf'
+    assert expected == my_answer(question)
+
 
 def my_answer(s):
     start = max_length = 0
