@@ -46,28 +46,25 @@ def test_merge_sort():
     assert answer == data
 
 
-def merge_sort(data, count=0):
+def merge_sort(data):
     if len(data) > 1:
         mid = len(data) // 2
         left, right = data[:mid], data[mid:]
-        count += merge_sort(left)
-        count += merge_sort(right)
+        merge_sort(left)
+        merge_sort(right)
 
         i = j = k = 0
-        left_n, right_n = len(left), len(right)
         while i < len(left) and j < len(right):
-            if left[i] < right[j]:
+            if left[i] <= right[j]:
                 data[k] = left[i]
                 i += 1
             else:
-                data[k] = right[j]
+                data[k] = left[j]
                 j += 1
-                count += left_n - i
             k += 1
 
-        if i < len(left):
+        while i < len(left):
             data[k:] = left[i:]
-        if j < len(right):
-            data[k:] = right[j:]
 
-    return count
+        while j < len(right):
+            data[k:] = right[j:]

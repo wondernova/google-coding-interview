@@ -26,4 +26,3 @@ def robin_karp_simple(a, b):
         if hash(a[i:i + m]) == hash_b:
             return i
     return -1
-0

@@ -10,6 +10,9 @@ def test_anagram():
     assert anagram('Dormitory', 'Dirty room')
     assert anagram('Astronomer', 'Moon starer')
     assert anagram('Conversation', 'Voices rant on')
+    assert not anagram('abcd', 'dcbas')
+    assert not anagram('a b c d ', ' A DB CC')
+    assert not anagram('a b c d ', ' A BCDA')
 
 
 def anagram_backup(s1, s2):

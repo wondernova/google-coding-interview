@@ -76,23 +76,16 @@ def test_even_data():
 
 
 def binary_search(data, target):
-    first = 0
-    last = len(data)
-    pos = -1
+    pos, left, right = -1, 0, len(data) - 1
 
-    while first <= last:
-        midpoint = (first + last) // 2
-        try:
-            answer = data[midpoint]
-        except IndexError:
-            return -1
+    while left <= right:
+        mid = (left + right) // 2
 
-        if answer == target:
-            pos = midpoint
-            break
-
-        if data[midpoint] >= target:
-            last = midpoint - 1
+        if data[mid] == target:
+            return mid
+        elif data[mid] < target:
+            left = mid + 1
         else:
-            first = midpoint + 1
-    return pos
+            right = mid - 1
+
+    return -1

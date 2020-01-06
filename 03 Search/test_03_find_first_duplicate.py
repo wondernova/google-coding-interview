@@ -14,6 +14,23 @@ def test_first_duplicate():
 
 
 def find_first_duplicate(arr):
+    hash = {}
+    answer, smallest_idx = -1, float('-inf')
+
+    for i, v in enumerate(arr):
+        if v not in hash:
+            hash[v] = i + 1
+        elif hash[v] > 0:
+            hash[v] *= -1
+
+            if smallest_idx < hash[v]:
+                smallest_idx = hash[v]
+                answer = v
+
+    return answer
+
+
+def _find_first_duplicate(arr):
     hash = dict()
 
     for i, v in enumerate(arr):

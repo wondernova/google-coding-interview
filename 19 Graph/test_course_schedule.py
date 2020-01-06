@@ -30,6 +30,23 @@ def test_course_schedule():
     assert check_course_schedule([[3, 1], [2, 1], [1, 0], [6, 5], [5, 4]])
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 def check_course_schedule(courses):
     graph = dict()  # {course: [prerequisites...]}
     for edge in courses:
