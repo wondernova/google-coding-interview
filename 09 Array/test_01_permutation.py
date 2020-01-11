@@ -10,7 +10,21 @@ def test_permutation():
 
     # Test01 - DFS Permutation
     answer = list(itertools.permutations(arr))
-    print(set(answer))
+    assert set(answer) == set(permutation(arr))
+
+    # Teest02
+    arr = list('AB')
+    answer = list(itertools.permutations(arr))
+    assert set(answer) == set(permutation(arr))
+
+    # Teest03
+    arr = list('A')
+    answer = list(itertools.permutations(arr))
+    assert set(answer) == set(permutation(arr))
+
+    # Teest03
+    arr = list('ABCDEFG')
+    answer = list(itertools.permutations(arr))
     assert set(answer) == set(permutation(arr))
 
 
