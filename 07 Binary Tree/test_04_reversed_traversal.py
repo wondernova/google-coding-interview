@@ -2,6 +2,10 @@ from tools import create_tree
 
 
 def test_reversed_traversal():
+    """
+    level traverse 를 거꾸로 돌린 값을 리턴한다
+    :return:
+    """
     node = create_tree([1, 2, 3, 4, 5, 6, 7])
     assert [4, 5, 6, 7, 2, 3, 1] == reversed_traversal(node)
 
@@ -21,7 +25,7 @@ def test_reversed_traversal():
     assert [] == reversed_traversal(node)
 
 
-from collections import deque
+from queue import Queue
 
 
 def reversed_traversal(root):
@@ -29,14 +33,14 @@ def reversed_traversal(root):
         return []
 
     stack = []
-    dq = deque()
-    dq.appendleft(root)
+    queue = Queue()
+    queue.put(root)
 
-    while dq:
-        node = dq.pop()
+    while queue.qsize():
+        node = queue.get()
         if node is not None:
             stack.append(node.value)
-            dq.appendleft(node.right)
-            dq.appendleft(node.left)
+            queue.put(node.right)
+            queue.put(node.left)
 
     return stack[::-1]
