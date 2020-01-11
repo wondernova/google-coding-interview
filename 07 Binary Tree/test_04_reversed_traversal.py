@@ -26,21 +26,21 @@ def test_reversed_traversal():
 
 
 from queue import Queue
+from collections import deque
 
 
 def reversed_traversal(root):
-    if not root:
+    if root is None:
         return []
 
-    stack = []
     queue = Queue()
     queue.put(root)
-
+    response = deque()
     while queue.qsize():
         node = queue.get()
         if node is not None:
-            stack.append(node.value)
+            response.appendleft(node.value)
             queue.put(node.right)
             queue.put(node.left)
 
-    return stack[::-1]
+    return list(response)
