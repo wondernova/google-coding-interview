@@ -10,21 +10,25 @@ def test_permutation():
 
     # Test01 - DFS Permutation
     answer = list(itertools.permutations(arr))
+    print(set(answer))
     assert set(answer) == set(permutation(arr))
 
 
 def permutation(arr):
-    def dfs(arr, start, res):
+    if not arr:
+        return arr
+
+    response = []
+
+    def dfs(start_idx):
         n = len(arr)
-        if start >= n - 1:
-            res.append(tuple(arr))
-            return res
+        if start_idx == n - 1:
+            response.append(tuple(arr[:]))
 
-        for i in range(start, n):
-            arr[start], arr[i] = arr[i], arr[start]
-            dfs(arr, start + 1, res)
-            arr[start], arr[i] = arr[i], arr[start]
+        for i in range(start_idx, n):
+            arr[start_idx], arr[i] = arr[i], arr[start_idx]
+            dfs(start_idx + 1)
+            arr[start_idx], arr[i] = arr[i], arr[start_idx]
 
-    res = []
-    dfs(arr, 0, res)
-    return res
+    dfs(0)
+    return response
