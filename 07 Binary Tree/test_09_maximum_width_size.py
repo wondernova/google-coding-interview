@@ -26,8 +26,10 @@ def get_width_size(root: Node):
             return 0
 
         lefts.setdefault(depth, pos)
-        max_width = max(dfs(node.left, depth + 1, pos * 2), dfs(node.right, depth + 1, pos * 2 + 1))
-        max_width = max(max_width, pos - lefts[depth] + 1)
+        width = pos - lefts[depth] + 1
+        max_width = max(width,
+                        dfs(node.left, depth + 1, pos * 2),
+                        dfs(node.right, depth + 1, pos * 2 + 1))
         return max_width
 
     max_width = dfs(root, 0, 0)
