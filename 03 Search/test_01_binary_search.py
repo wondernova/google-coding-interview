@@ -76,7 +76,7 @@ def test_even_data():
 
 
 def binary_search(data, target):
-    pos, left, right = -1, 0, len(data) - 1
+    left, right = 0, len(data) - 1
 
     while left <= right:
         mid = (left + right) // 2

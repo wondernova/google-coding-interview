@@ -28,16 +28,14 @@ def test_longest_common_subsequence():
     assert 'abbcd' == lcs_dp('abbcde', 'zazmabzbzczd')
 
 
-def lcs_recursion(s1: str, s2: str):
-    if not s1 or not s2:
+def lcs_recursion(str1, str2):
+    if not str1 or not str2:
         return ''
 
-    if s1[0] == s2[0]:
-        return s1[0] + lcs_recursion(s1[1:], s2[1:])
+    if str1[0] == str2[0]:
+        return str1[0] + lcs_recursion(str1[1:], str2[1:])
     else:
-        return max(lcs_recursion(s1, s2[1:]),
-                   lcs_recursion(s1[1:], s2),
-                   key=len)
+        return max(lcs_recursion(str1[1:], str2), lcs_recursion(str1, str2[1:]), key=len)
 
 
 def lcs_dp(s1: str, s2: str):
