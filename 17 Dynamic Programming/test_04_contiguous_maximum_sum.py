@@ -17,7 +17,6 @@ def test_contiguous_maximum_sum():
     assert 35 == cms_brute_force([2, 3, 4, 5, 6, 7, 8])
 
     # Improve Brute Force
-    print()
     assert 20 == max_contiguous_sum([-2, 11, -4, 13, -5, 2])
     assert 12 == max_contiguous_sum([1, 4, -2, -1, 0, 10, -5])
     assert 3 == max_contiguous_sum([-10, -9, -5, -4, 3, -1])

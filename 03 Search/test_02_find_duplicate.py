@@ -11,6 +11,9 @@ def test_duplicate_in_integer_array():
     arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 8]
     assert 8 == check_duplicate(arr)
 
+    arr = [0, 1, 1, 2, 3, 4, 5, 6, 7, 8]
+    assert 1 == check_duplicate(arr)
+
 
 def check_duplicate(arr):
     for i in range(len(arr)):
