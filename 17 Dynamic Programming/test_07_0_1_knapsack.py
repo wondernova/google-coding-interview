@@ -66,18 +66,18 @@ def test_01knapsack():
 
 def knapsack_resursive(w, v, capacity):
     def f(capacity, i, sack=[]):
-        if i <= 0:
+        if i < 0:
             return [0, sack]
-        elif w[i - 1] > capacity:
+        elif w[i] > capacity:
             return f(capacity, i - 1, sack)
 
-        r1 = f(capacity - w[i - 1], i - 1, sack + [w[i - 1]])
-        r1[0] += v[i - 1]
+        r1 = f(capacity - w[i], i - 1, sack + [w[i]])
+        r1[0] += v[i]
         r2 = f(capacity, i - 1, sack)
 
         return max(r1, r2, key=lambda x: x[0])
 
-    max_value, weights = f(capacity, len(w))
+    max_value, weights = f(capacity, len(w) - 1)
     return max_value, weights
 
 
