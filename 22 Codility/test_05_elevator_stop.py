@@ -36,7 +36,6 @@ def test_elevator_stop():
     assert solution(weights, destinations, max_floor, max_people, max_weight) == 2
 
     # Test 4
-    # 1층 (1) -> 다태우고 2층 (1)
     weights = [20, 20, 50, 50, 10, 100, 60, 60]  # A
     destinations = [2, 3, 2, 4, 5, 5, 3, 2]  # B
     max_floor = 6  # M
